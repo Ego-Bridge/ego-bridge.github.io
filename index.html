@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Scaling imitation learning through end-to-end, egocentric, and unified human-to-robot imitation learning">
-  <meta name="keywords" content="EgoMimic, EMimic, EgoPlay, Mimic, Imitation">
+        content="Scaling mobile manipulation through egocentric video">
+  <meta name="keywords" content="EgoMimic-Mobile, EgoMimic, Mobile, EgoMM, Mimic, Imitation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EgoMimic : Scaling Imitation Learning via Egocentric Video</title>
 
@@ -44,64 +44,11 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">EgoMimic | Scaling Imitation Learning through Egocentric Video</h1>
+          <h1 class="title is-1 publication-title">EgoMimic-Mobile | Scaling Mobile Manipulation through Egocentric Human Data</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://simarkareer.com/">Simar Kareer</a><sup>1</sup>,</span>
+              <a href="">Anonymous Authors</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://dhruv2012.github.io/">Dhruv Patel</a><sup>1*</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/ryan-punamiya/">Ryan Punamiya</a><sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://matnay.github.io/">Pranay Mathur</a><sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://sites.google.com/view/shuocheng">Shuo Cheng</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.chenwangjeremy.net/">Chen Wang</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://faculty.cc.gatech.edu/~judy/">Judy Hoffman</a><sup>1*</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://faculty.cc.gatech.edu/~danfei/">Danfei Xu</a><sup>1*</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Georgia Tech,</span>
-            <span class="author-block"><sup>2</sup>Stanford University</span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://youtu.be/kgqQZVqJFlA" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
-                </a>
-              </span>
-            </div>
-
           </div>
         </div>
       </div>
@@ -117,15 +64,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p style="font-size: 125%">
-            The scale and diversity of demonstration data required for imitation learning is a significant challenge.
-            We present <b>EgoMimic</b>, a full-stack framework that scales manipulation through egocentric-view human demonstrations. 
-            <b>EgoMimic</b> achieves this through: (1) an ergonomic human data collection system using the Project Aria glasses, 
-            (2) a low-cost bimanual manipulator that minimizes the kinematic gap to human data, (3) cross-domain data alignment techniques, 
-            and (4) an imitation learning architecture that co-trains on hand and robot data. Compared to prior works that only extract 
-            high-level intent from human videos, our approach treats human and robot data equally as embodied demonstration data and 
-            learns a unified policy from both data sources. <b>EgoMimic</b> achieves significant improvement on a diverse set of long-horizon, 
-            single-arm and bimanual manipulation tasks over state-of-the-art imitation learning methods and enables generalization to entirely new scenes.
-            Finally, we show that scaling 1 hour of additional hand data is significantly more valuable than 1 hour of additional robot data.
+            Recent works have attempted to tackle mobile manipulation via teleoperation, but collecting mobile teleoperated demonstrations is prohibitively slow and expensive at scale. We present <b>EgoMimic-Mobile</b>, a novel end-to-end framework for collecting and training mobile manipulation policies with only static robot data combined with mobile human data. Our approach consists of three key components: 1) a data collection pipeline that maps human motion to a differential-drive robot base; 2) a training framework that seamlessly co-trains on both human and robot data; and 3) an adaptive inference regime that intelligently switches between manipulation and navigation modes. Through direct transfer of human navigation knowledge with kinematics re-targeting, we achieve zero-shot transfer of navigation capabilities across embodiments without expensive mobile robot data collection. In our experiments across three challenging long-horizon tasks, EgoMimic-Mobile demonstrates superior performance compared to baselines trained on teleoperated mobile robot data, achieving higher task performance in our scoring system with significantly less data. We find that EgoMimic-Mobile is able to generalize to new spatial configurations and scenes, and we observe positive performance scaling as we increase the hours of human data, opening new avenues for scalable robotic learning in real-world environments.
           </p>
         </div>
       </div>
@@ -138,161 +77,12 @@
     <div class="rows">
       <div class="rows is-centered">
         <div class="row is-full-width">
-          <h2 class="title is-3 has-text-centered"><span class="dvima">Method</span></h2>
-          <br>
-          <video poster="" autoplay muted controls loop height="100%">
-            <source src="static/videos/method.mp4" type="video/mp4">
-          </video>
-          <br>
-          <span style="font-size: 110%"><b>EgoMimic</b>. (a) A stack to collect human data for manipulation using the <a href="https://www.projectaria.com/">Project Aria glasses</a>. 
-            (b) A low cost and capable humanoid that can readily leverage egocentric manipulation data. 
-            Our approach lets us collect large scale human data which closely matches the observations seen by a human. </span>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-          <img src="static/images/method.jpg" class="interpolation-image" alt=""
-            style="display: block; margin-left: auto; margin-right: auto" />
-          <br>
-          <span style="font-size: 110%"><b>Unified Policy from Human and Robot Data</b>. The model processes normalized hand and robot data through
-            shared vision and policy network, outputting 2 separate predictions: Pose for
-            both human and robot data, and joint actions for robot data. The
-            framework uses masked images to mitigate human-robot appearance
-            gaps and incorporates wrist camera views for the robot.</span>
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Coming Soon...</span></h2>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="section">
-  <div class="container is-max-widescreen">
-    <div class="rows">
-      <div class="rows is-centered">
-        <div class="row is-full-width">
-          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
-          <br>
-          <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: In-domain Performance</span></h3>
-
-          <!-- Carousel of Videos and Buttons -->
-          <div class="results-carousel" style="display: flex; flex-direction: column; align-items: center;">
-
-            <!-- Video and description container -->
-            <div class="item active" data-description="Continuous object-in-bowl: the robot continuously picks a small toy, places it in a bowl, and resets the scene.">
-              <video autoplay muted loop>
-                <source src="static/videos/oboo.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item" data-description="Groceries: the robot picks a shopping bag via a thin handle and places all the chips inside.">
-              <video autoplay muted loop>
-                <source src="static/videos/groceries.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item" data-description="Laundry: the robot folds a polo shirt placed randomly on the table.">
-              <video autoplay muted loop>
-                <source src="static/videos/laundry.mp4" type="video/mp4">
-              </video>
-            </div>
-
-            <!-- Description text -->
-            <div id="video-description" style="font-size: 110%; text-align: center; margin-top: 15px;">
-              <b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.
-            </div>
-
-            <!-- Navigation Buttons -->
-            <div class="carousel-dots">
-              <span class="dot" data-index="0"></span>
-              <span class="dot" data-index="1"></span>
-              <span class="dot" data-index="2"></span>
-            </div>
-        
-            <!-- Navigation Buttons -->
-            <div class="carousel-controls" style="margin-top: 10px;">
-                <button id="prev-btn" class="carousel-nav prev-button">
-                    <span class="icon is-large"><i class="fas fa-chevron-left"></i></span>
-                </button>
-                <button id="next-btn" class="carousel-nav next-button">
-                    <span class="icon is-large"><i class="fas fa-chevron-right"></i></span>
-                </button>
-            </div>
-
-          </div>
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-        <!-- Centering Quantitative Results -->
-        <img src="static/images/successrate.png" class="interpolation-image" alt=""
-        style="display: block; margin-left: auto; margin-right: auto; width: 65%; height: auto;" />
-        <br>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-        <h3 class="title is-5" align="center"><span class="dvima">Replanning and robustness to object and robot perturbations</span></h3>
-        <div class="columns is-centered">
-          <div>
-            <video autoplay muted loop height="100%">
-              <source src="static/videos/robustness_crop.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Generalization</span></h3>
-        <h3 class="title is-5" align="center"><span class="dvima">EgoMimic generalizes to new scenes by co-training on robot data in original scene and human data in new scene</span></h3>
-        <div class="columns is-centered">
-          <div>
-            <video autoplay muted loop height="75%">
-              <source src="static/videos/scenegen.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <img src="static/images/scenegengraph.png" alt="" 
-        style="display: block; margin-left: auto; margin-right: auto; width: 70%; height: auto;" />
-        <br>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Scaling</span></h3>
-        <h3 class="title is-5" align="center"><span class="dvima">Scaling hand data</data></span></h3>
-        <div class="columns is-centered">
-          <div>
-            <video autoplay muted loop height="75%">
-              <source src="static/videos/scaling_qual.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <h3 class="title is-5" align="center"><span class="dvima">Scaling hand data v/s scaling robot data</span></h3>
-        <img src="static/images/scaling.png" alt="" 
-        style="display: block; margin-left: auto; margin-right: auto; width: 60%; height: auto;" />
-        <br>
-        <div>
-          <span style="font-size: 110%">EgoMimic trained on 2
-            hours robot data + 1 hour hand data (Blue) strongly outperforms
-            ACT trained on 3 hours of robot data (Orange) in the <b>Continuous Object-in-Bowl</b> task. This shows that scaling hand data using our method outperforms 
-            scaling an equivalent amount of robot data.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--Conclusion-->
-<section class="section">
-  <div class="container is-max-widescreen">
-    <div class="rows">
-      <div class="rows is-centered ">
-        <div class="row is-full-width">
-          <h2 class="title is-3"><span class="dvima">Conclusion</span></h2>
-
-          <p style="font-size: 125%">
-            We present <b>EgoMimic</b>, a framework to co-train manipulation policies from human egocentric videos and teleoperated robot data. 
-            By leveraging Project Aria glasses, a low-cost bimanual robot setup, cross-domain alignment techniques, and a unified policy learning architecture, 
-            <b>EgoMimic</b> improves over state-of-the-art baselines on three challenging real-world tasks and shows generalization to new scenes as 
-            well as favorable scaling properties. For future work, we plan to explore the possibility of generalizing to new robot embodiments and entirely 
-            new behaviors demonstrated only in human data. Overall, we believe our work opens up exciting new venues of research on scaling robot data via passive data collection.
-          </p>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 
 <footer class="footer">
   <div class="container">
@@ -308,173 +98,3 @@
     </div>
   </div>
 </footer>
-
-<!-- Custom Script for Button-based Carousel -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('.item');
-    const taskDescriptions = [
-      "<b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.",
-      "<b>(b) Groceries:</b> the robot picks a shopping bag via a thin handle and places all the chips inside.",
-      "<b>(c) Laundry:</b> the robot folds a polo shirt placed randomly on the table."
-    ];
-
-    let currentIndex = 0;
-    const taskDescriptionEl = document.getElementById('taskDescription');
-    
-    // Function to show the active video and hide others
-    function showVideo(index) {
-      items.forEach((item, i) => {
-        if (i === index) {
-          item.style.display = 'block';  // Show active item
-        } else {
-          item.style.display = 'none';   // Hide inactive items
-        }
-      });
-      // Update task description
-      taskDescriptionEl.innerHTML = taskDescriptions[index];
-    }
-
-    // Button event listeners
-    document.getElementById('prevBtn').addEventListener('click', function () {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
-      showVideo(currentIndex);
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', function () {
-      currentIndex = (currentIndex + 1) % items.length;  // Move forward
-      showVideo(currentIndex);
-    });
-
-    // Initialize the first video
-    showVideo(currentIndex);
-  });
-</script>
-
-<!-- Basic Styling to ensure all videos are controlled and responsive -->
-<style>
-  .carousel .item {
-    display: none;  /* Hide all videos initially */
-  }
-
-  .carousel .item video {
-    width: 70%;  /* Make the videos smaller */
-    max-width: 400px;  /* Set a maximum width */
-    height: auto;  /* Maintain aspect ratio */
-    margin: 0 auto;  /* Center the video */
-  }
-
-  .carousel .item:first-child {
-    display: block;  /* Show the first video by default */
-  }
-
-  .carousel-nav {
-    background-color: #000;
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    padding: 10px;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-
-  .carousel-nav:hover {
-    background-color: #555;
-  }
-
-  .icon.is-large {
-    font-size: 2em;
-  }
-</style>
-<script>
-  // JavaScript for video carousel
-  document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.results-carousel .item');
-    const descriptionBox = document.getElementById('video-description');
-    let currentIndex = 0;
-
-    // Show the current item and update the description
-    function updateCarousel() {
-      items.forEach((item, index) => {
-        item.classList.toggle('active', index === currentIndex);
-      });
-      const currentItem = items[currentIndex];
-      descriptionBox.innerHTML = `<b>(${String.fromCharCode(97 + currentIndex)})</b> ` + currentItem.dataset.description;
-    }
-
-    // Set up the next button
-    document.getElementById('next-btn').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel();
-    });
-
-    // Set up the previous button
-    document.getElementById('prev-btn').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      updateCarousel();
-    });
-
-    // Initialize the carousel
-    updateCarousel();
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('.item');
-    const taskDescriptions = [
-        "<b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.",
-        "<b>(b) Groceries:</b> the robot picks a shopping bag via a thin handle and places all the chips inside.",
-        "<b>(c) Laundry:</b> the robot folds a polo shirt placed randomly on the table."
-    ];
-    const dots = document.querySelectorAll('.dot');
-    let currentIndex = 0;
-    const taskDescriptionEl = document.getElementById('video-description');
-
-    // Function to show the active video and update dots
-    function showVideo(index) {
-        items.forEach((item, i) => {
-            if (i === index) {
-                item.style.display = 'block';  // Show active item
-            } else {
-                item.style.display = 'none';   // Hide inactive items
-            }
-        });
-        // Update task description
-        taskDescriptionEl.innerHTML = taskDescriptions[index];
-        
-        // Update dots
-        dots.forEach((dot, i) => {
-            if (i === index) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }
-
-    // Button event listeners
-    document.getElementById('prev-btn').addEventListener('click', function () {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
-        showVideo(currentIndex);
-    });
-
-    document.getElementById('next-btn').addEventListener('click', function () {
-        currentIndex = (currentIndex + 1) % items.length;  // Move forward
-        showVideo(currentIndex);
-    });
-
-    // Dot event listeners
-    dots.forEach(dot => {
-        dot.addEventListener('click', function () {
-            currentIndex = parseInt(this.getAttribute('data-index'));
-            showVideo(currentIndex);
-        });
-    });
-
-    // Initialize the first video
-    showVideo(currentIndex);
-});
-
-</script>
-
-</body>
-</html>
