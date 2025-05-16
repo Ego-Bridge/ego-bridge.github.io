@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Scaling mobile manipulation through egocentric video">
-  <meta name="keywords" content="EgoMimic-Mobile, EgoMimic, Mobile, EgoMM, Mimic, Imitation">
+        content="Domain Adaptation for Generalizable Imitation from Egocentric Human Data">
+  <meta name="keywords" content="EgoBridge, EgoMimic, Bridge, OT, Transport, Imitation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EgoMimic : Scaling Imitation Learning via Egocentric Video</title>
+  <title>EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -44,7 +44,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">EgoMimic-Mobile | Scaling Mobile Manipulation through Egocentric Human Data</h1>
+          <h1 class="title is-1 publication-title">EgoBridge | Domain Adaptation for Generalizable Imitation from Egocentric Human Data</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">Anonymous Authors</a><sup>1</sup>,</span>
@@ -64,7 +64,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p style="font-size: 125%">
-            Recent works have attempted to tackle mobile manipulation via teleoperation, but collecting mobile teleoperated demonstrations is prohibitively slow and expensive at scale. We present <b>EgoMimic-Mobile</b>, a novel end-to-end framework for collecting and training mobile manipulation policies with only static robot data combined with mobile human data. Our approach consists of three key components: 1) a data collection pipeline that maps human motion to a differential-drive robot base; 2) a training framework that seamlessly co-trains on both human and robot data; and 3) an adaptive inference regime that intelligently switches between manipulation and navigation modes. Through direct transfer of human navigation knowledge with kinematics re-targeting, we achieve zero-shot transfer of navigation capabilities across embodiments without expensive mobile robot data collection. In our experiments across three challenging long-horizon tasks, EgoMimic-Mobile demonstrates superior performance compared to baselines trained on teleoperated mobile robot data, achieving higher task performance in our scoring system with significantly less data. We find that EgoMimic-Mobile is able to generalize to new spatial configurations and scenes, and we observe positive performance scaling as we increase the hours of human data, opening new avenues for scalable robotic learning in real-world environments.
+            Egocentric human experience data presents a vast resource for scaling up end-to-end imitation learning for robotic manipulation. However, significant domain gaps in visual appearance, sensor modalities, and kinematics between human and robot impede knowledge transfer. This paper presents EgoBridge, a unified co-training framework that explicitly aligns the policy latent spaces between human and robot data using domain adaptation. Through a measure of discrepancy on the joint policy latent features and actions based on Optimal Transport (OT), we learn observation representations that not only align between the human and robot domain but also preserve the action-relevant information critical for policy learning. EgoBridge achieves a significant absolute policy success rate improvement by 44% over human-augmented cross-embodiment baselines in three real-world single-arm and bimanual manipulation tasks. EgoBridge also generalizes to new objects, scenes, and tasks seen only in human data, where baselines fail entirely.
           </p>
         </div>
       </div>
