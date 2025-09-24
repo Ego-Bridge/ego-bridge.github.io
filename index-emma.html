@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Scaling Mobile Manipulation via Egocentric Human Data">
+  <meta name="keywords" content="EMMA, Mobile Manipulation, Egocentric Human Data">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMMA: Scaling Mobile Manipulation via Egocentric Human Data</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://rl2.cc.gatech.edu/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            EMMA: Scaling Mobile Manipulation via Egocentric Human Data
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://lawrencez22.github.io">Lawrence Y. Zhu</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/pranav-kuppili-b05071250">Pranav Kuppili</a><sup>*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.rpunamiya.dev">Ryan Punamiya</a><sup>*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/elmo-aphiwetsa/">Elmo Aphiwetsa</a><sup>†</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://dhruv2012.github.io">Dhruv Patel</a><sup>†</sup>,  
+            </span>
+            <br><span class="author-block">
+              <a href="https://simarkareer.com">Simar Kareer</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.cc.gatech.edu/~sha9">Sehoon Ha</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.cc.gatech.edu/~danfei">Danfei Xu</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Georgia Institute of Technology</span>
+            <p class="is-size-6 has-text-grey">
+              <sup>*,†</sup> equal contributions
+            </p> 
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2509.04443"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2509.04443"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://egomoma.github.io/emma"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (Coming Soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://egomoma.github.io/emma"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+            </div>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Results carousel inserted here -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <!-- Carousel of Videos and Buttons -->
+          <div class="results-carousel" style="display: flex; flex-direction: column; align-items: center;">
+
+            <!-- Video and description container -->
+            <div class="item active" data-description="Handover Wine (SceneGen)">
+              <video autoplay muted loop style="width: 80%; height: auto; display: block; margin: 0 auto;">
+                <source src="static/videos/handover_wine_sceneGen.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Serve Croissant (Lab)">
+              <video autoplay muted loop style="width: 80%; height: auto; display: block; margin: 0 auto;">
+                <source src="static/videos/serve_croissant_lab.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Handover Wine (Lab)">
+              <video autoplay muted loop style="width: 80%; height: auto; display: block; margin: 0 auto;">
+                <source src="static/videos/handover_wine_lab.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Deliver Groceries">
+              <video autoplay muted loop style="width: 80%; height: auto; display: block; margin: 0 auto;">
+                <source src="static/videos/deliver_groceries.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <!-- Navigation Buttons -->
+                        <div class="carousel-dots">
+              <span class="dot" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="carousel-controls">
+                <button id="prev-btn" class="carousel-nav prev-button">
+                    <span class="icon is-large"><i class="fas fa-chevron-left"></i></span>
+                </button>
+                <button id="next-btn" class="carousel-nav next-button">
+                    <span class="icon is-large"><i class="fas fa-chevron-right"></i></span>
+                </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container is-max-widescreen">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p style="font-size: 120%">
+            Scaling mobile manipulation imitation learning is bottlenecked by expensive mobile robot teleoperation. 
+            We present Egocentric Mobile Manipulation (EMMA), an end-to-end framework training mobile manipulation 
+            policies from human mobile manipulation data with static robot data, sidestepping mobile teleoperation. 
+            To accomplish this, we co-train the human full-body motion data with the static robot data. In our experiments 
+            across three real-world tasks, EMMA demonstrates comparable performance to baselines trained on teleoperated 
+            mobile robot data (Mobile ALOHA), achieving higher or equivalent task performance in full task success with 
+            significantly less data. We find that EMMA is able to generalize to new spatial configurations and scenes, 
+            and we observe positive performance scaling as we increase the hours of human data, opening new avenues for 
+            scalable robotic learning in real-world environments.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/Qq1Jp52Zj3Q?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+<!--/ Paper video. -->
+
+
+    <!-- Method -->
+    <h2 class="title is-3 has-text-centered"><span class="dvima">Method</span></h2>
+    <h3 class="title is-5" align="center"><span class="dvima">A unified co-training framework</data></span></h3>
+    <div class="has-text-centered" style="margin-top: 2rem;">
+      <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
+        <source src="./static/videos/method_teaser.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="content has-text-justified">
+      EMMA: The model cotrains human fullbody motion data with static robot data. and outputs a unified policy that enables mobile manipulation deployment without mobile robot teleoperation.
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <!-- Figures -->
+    <div class="columns is-centered">
+      <div class="column">
+
+        <figure class="has-text-centered">
+          <img src="./static/figures/method_fig.jpg" alt="Method figure" style="width: 60%; height: auto;"/>
+          <figcaption class="has-text-grey is-size-6">
+            Left: Architecture of joint human-robot policy learning framework. Our model processes heterogeneous human and robot data through <em>stems</em> and decodes them through various action <em>heads</em>. The navigation head is deployed on the robot during evaluation, demonstrating transfer without robot supervision. Right: Our custom low-cost bimanual mobile manipulator.
+          </figcaption>
+        </figure>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        
+      </div>
+    </div>
+
+    <h3 class="title is-5" align="center"><span class="dvima">Retargeting</data></span></h3>
+      <figure class="has-text-centered">
+        <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 60%; height: auto;"/>
+        <figcaption class="has-text-grey is-size-6">
+          Given a 3D pose trajectory from a human demonstration, we compute a feasible 2D trajectory for a differential drive robot. This resulting trajectory can be directly executed by the robot or used as input for policy learning.
+        </figcaption>
+      </figure>
+      <div class="has-text-centered" style="margin-top: 2rem;">
+        <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
+          <source src="./static/videos/retargeting_teaser.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+    <div class="rows">
+
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
+          <h3 class="title is-4 has-text-centered"><span class="dvima">(A) In-domain Performance</span></h3>
+
+          <figure class="has-text-centered">
+            <img src="./static/figures/subtasks_comparisons.png" alt="main results" style="width: 100%; height: auto;"/>
+
+          </figure>     
+          <div class="content has-text-justified" style="font-size: 110%">
+          EMMA (blue), trained without mobile teleoperation data, significantly outperforms Mobile ALOHA (orange) on <em>Grocery Shopping</em> and 
+          <em>Handover Wine</em> tasks (p < 0.05). <em>Table Service</em> variants show comparable performance. Error bars represent 95% confidence intervals from 50 trials.
+          </div>
+          </div>
+        </div>
+
+        <h3 class="title is-5" align="center"><span class="dvima">(B) Scene Generalization</data></span></h3>
+        <div class="has-text-centered" style="margin-top: 2rem;">
+          <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
+            <source src="./static/videos/sceneGen_data_and_rollout.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="content has-text-justified" style="font-size: 110%">
+          EMMA generalizes to new scenes by co-training on static robot data in original scene and human full-body motion data in new scene
+        </div>
+
+          <div class="columns is-centered">
+        <div class="column">
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <h3 class="title is-4 has-text-centered"><span class="dvima">(C) Scaling</span></h3>
+        <h3 class="title is-5" align="center"><span class="dvima">Scaling human full-body motion data v/s scaling mobile robot teleop data</span></h3>
+        <figure class="has-text-centered">
+          <img src="./static/figures/scaling_law.png" alt="main results" style="width: 60%; height: auto;"/>
+
+        </figure>   
+        <br>
+        <div class="content has-text-justified" style="font-size: 110%">
+          EMMA Trained on 1 hour human full-body motion data (Blue) strongly outperforms Mobile ALOHA trained on 1 hours of robot data (Orange) in the <b>Handover Wine</b> task. 
+          We show that scaling mobile manipulation with human data outperforms scaling on mobile robot teleopreation data collected under an equivalent amount of time.
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container is-max-widescreen">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered"><span class="dvima">Conclusion</span></h2>
+        <div class="content has-text-justified" style="font-size: 110%">
+          In conclusion, we presented EMMA, a novel framework that enables mobile manipulation without requiring expensive mobile teleoperation. We find that EMMA outperforms Mobile ALOHA 
+          style teleoperation with equivalent data collection time and demonstrates superior scaling properties. Further, we ablate our key design decisions and observe that both the motion 
+          retargeter and the phase identification module are integral to downstream performance. Overall, we have demonstrated the possibility of scaling robot mobile manipulation performance 
+          with egocentric human data. We hope this result spurs new research and informs future researchers of potential opportunities and challenges.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-widescreen content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{zhu2025emmascalingmobilemanipulation,
+  title={EMMA: Scaling Mobile Manipulation via Egocentric Human Data}, 
+  author={Lawrence Y. Zhu and Pranav Kuppili and Ryan Punamiya and Patcharapong Aphiwetsa and Dhruv Patel and Simar Kareer and Sehoon Ha and Danfei Xu},
+  year={2025},
+  eprint={2509.04443},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2509.04443}, 
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>, <a
+              href="https://peract.github.io/">PerAct</a> and <a href="https://egomimic.github.io">EgoMimic</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Custom Script for Button-based Carousel -->
+
+
+<!-- Basic Styling to ensure all videos are controlled and responsive -->
+<style>
+  .carousel .item {
+    display: none;  /* Hide all videos initially */
+  }
+
+  .carousel .item video {
+    width: 70%;  /* Make the videos smaller */
+    max-width: 400px;  /* Set a maximum width */
+    height: auto;  /* Maintain aspect ratio */
+    margin: 0 auto;  /* Center the video */
+  }
+
+  .carousel .item:first-child {
+    display: block;  /* Show the first video by default */
+  }
+
+  .carousel-nav {
+    background-color: #000;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  .carousel-nav:hover {
+    background-color: #555;
+  }
+
+  .icon.is-large {
+    font-size: 2em;
+  }
+</style>
+<script>
+  // JavaScript for video carousel
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.results-carousel .item');
+    const descriptionBox = document.getElementById('video-description');
+    let currentIndex = 0;
+
+    // Show the current item and update the description
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.toggle('active', index === currentIndex);
+      });
+      const currentItem = items[currentIndex];
+      descriptionBox.innerHTML = `<b>(${String.fromCharCode(97 + currentIndex)})</b> ` + currentItem.dataset.description;
+    }
+
+    // Set up the next button
+    document.getElementById('next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    });
+
+    // Set up the previous button
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateCarousel();
+    });
+
+    // Initialize the carousel
+    updateCarousel();
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.item');
+    const taskDescriptions = [
+        "<b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.",
+        "<b>(b) Groceries:</b> the robot picks a shopping bag via a thin handle and places all the chips inside.",
+        "<b>(c) Laundry:</b> the robot folds a polo shirt placed randomly on the table."
+    ];
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    const taskDescriptionEl = document.getElementById('video-description');
+
+    // Function to show the active video and update dots
+    function showVideo(index) {
+        items.forEach((item, i) => {
+            if (i === index) {
+                item.style.display = 'block';  // Show active item
+            } else {
+                item.style.display = 'none';   // Hide inactive items
+            }
+        });
+        // Update task description
+        taskDescriptionEl.innerHTML = taskDescriptions[index];
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Button event listeners
+    document.getElementById('prev-btn').addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
+        showVideo(currentIndex);
+    });
+
+    document.getElementById('next-btn').addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % items.length;  // Move forward
+        showVideo(currentIndex);
+    });
+
+    // Dot event listeners
+    dots.forEach(dot => {
+        dot.addEventListener('click', function () {
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            showVideo(currentIndex);
+        });
+    });
+
+    // Initialize the first video
+    showVideo(currentIndex);
+});
+
+</script>
+
+</body>
+</html>
