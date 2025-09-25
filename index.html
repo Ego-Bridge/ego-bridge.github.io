@@ -82,7 +82,7 @@
           <div class="column has-text-centered" style="margin-top: 1rem;">
             <div class="publication-links">
               <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2509.19626" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
@@ -113,16 +113,18 @@
     </div>
   </div>
 </section>
+<body>
 
+  <div style="background-color: #fff0f0; color: red; font-weight: bold; text-align: center; padding: 10px; font-size: 1.2em;">
+    EgoBridge will be featured as an Oral presentation at the CoRL 2025 H2R Workshop. Come see us there!
+  </div>
+  
 <section class="section">
   <div class="container is-max-widescreen">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Teaser</h2>
-        <div class="publication-video">
-          <video poster="" autoplay muted controls loop style="width: 100%; height: auto;">
-            <source src="./static/videos/teaser_placeholder.mp4" type="video/mp4">
-          </video>
+        <div class="publication-image">
+          <img src="./static/figures/teaser_figure.png" 
+               alt="EgoBridge Teaser" 
+               style="width: 600%; height: auto;"/>
         </div>
       </div>
     </div>
@@ -147,136 +149,213 @@
 
 <section class="section">
   <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Optimal Transport</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
-        <source src="./static/videos/tweet3_placeholder.mp4" type="video/mp4">
-      </video>
-      <p class="is-size-6 has-text-grey">Placeholder for Tweet 3 video</p>
-    </div>
-  </div>
-</section>
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
 
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">DTW</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
-        <source src="./static/videos/tweet4_placeholder.mp4" type="video/mp4">
-      </video>
-      <p class="is-size-6 has-text-grey">Placeholder for Tweet 4 video</p>
-    </div>
-  </div>
-</section>
+          <!-- Optimal Transport -->
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Latent Alignment with Joint Optimal Transport</span></h2>
+          <br>
+          <video poster="" autoplay muted controls loop height="100%">
+            <source src="static/videos/tweet3.mp4" type="video/mp4">
+          </video>
+          <br>
+          <span style="font-size: 110%">
+            <b>Latent alignment with OT</b>. Various domain gaps limit transfer between human and robot. 
+            Our key insight: leverage inherent human ↔ robot motion similarities to supervise latent alignment. 
+            We formalize this as an <b>Optimal Transport</b> problem, probabilistically mapping human + robot data.
+          </span>
 
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Unified Policy (Architecture)</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <img src="./static/figures/architecture_placeholder.png" alt="Architecture figure" style="width: 60%; height: auto;"/>
-    </div>
-  </div>
-</section>
+          <br><br>
 
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Rollout Videos</span></h2>
-    <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
-      <div class="column is-half has-text-centered">
-        <video poster="" autoplay muted controls loop style="width: 100%; height: auto;">
-          <source src="./static/videos/rollout_1_placeholder.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half has-text-centered">
-        <video poster="" autoplay muted controls loop style="width: 100%; height: auto;">
-          <source src="./static/videos/rollout_2_placeholder.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half has-text-centered">
-        <video poster="" autoplay muted controls loop style="width: 100%; height: auto;">
-          <source src="./static/videos/rollout_3_placeholder.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half has-text-centered">
-        <video poster="" autoplay muted controls loop style="width: 100%; height: auto;">
-          <source src="./static/videos/rollout_4_placeholder.mp4" type="video/mp4">
-        </video>
+          <!-- DTW -->
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Dynamic Time Warping (DTW)</span></h2>
+          <br>
+          <video poster="" autoplay muted controls loop height="100%">
+            <source src="static/videos/tweet4.mp4" type="video/mp4">
+          </video>
+          <br>
+          <span style="font-size: 110%">
+            <b>Joint Latent-Action Cost with OT</b>. To integrate action information into OT, we leverage 
+            <b>Dynamic Time Warping (DTW)</b>. In a batch, DTW finds the most behaviorally similar human 
+            samples to a given sample. These "pseudo-pairs" are used to discount the latent cost in OT, 
+            aligning the joint latent–action distribution.
+          </span>
+
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+
 <section class="section">
   <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">In-Distribution Performance</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <img src="./static/figures/in_distribution_placeholder.png" alt="In-distribution performance figure" style="width: 80%; height: auto;"/>
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Architecture</span></h2>
+          <br>
+          <video poster="" autoplay muted controls loop height="100%">
+            <source src="static/videos/tweet5.mp4" type="video/mp4">
+          </video>
+          <br>
+          <span style="font-size: 110%">
+            <b>Unified Policy</b>. Our method consists of a simple unified policy which integrates directly with human-robot co-training.  
+            (a) We embed human and robot samples into a shared latent space with encoder <b>f<sub>φ</sub></b>.  
+            (b) We leverage OT as an auxiliary loss function to encourage the encoder <b>f<sub>φ</sub></b> to align human and robot latents.  
+            (c) We co-train the policy on human and robot data by jointly predicting actions and computing a combined BC loss.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+
+          <!-- ===================== RESULTS HEADER ===================== -->
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
+          <br>
+
+          <!-- ===================== In-domain Performance ===================== -->
+          <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: In-domain Performance</span></h3>
+          <br>
+          <div class="results-carousel" style="display: flex; flex-direction: column; align-items: center;">
+
+            <!-- Video items -->
+            <div class="item active" data-description="<b>(a) Laundry:</b> the robot folds a polo shirt placed randomly on the table.">
+              <video autoplay muted loop>
+                <source src="static/videos/laundry.mp4" type="video/mp4">
+              </video>
+            </div>
+          
+            <div class="item" data-description="<b>(b) Scoop Coffee:</b> the robot picks up a scoop filled with coffee beans and empties it into the target container placed randomly.">
+              <video autoplay muted loop>
+                <source src="static/videos/scoop.mp4" type="video/mp4">
+              </video>
+            </div>
+          
+            <div class="item" data-description="<b>(c) Drawers:</b> the robot picks up a toy and places it into the open drawer and closes it.">
+              <video autoplay muted loop>
+                <source src="static/videos/drawers.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <!-- Description -->
+            <div id="video-description" style="font-size: 110%; text-align: center; margin-top: 15px;">
+              <b>(a) Laundry:</b> the robot folds a polo shirt placed randomly on the table.
+            </div>
+
+            <!-- Dots -->
+            <div class="carousel-dots">
+              <span class="dot" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+            </div>
+
+            <!-- Prev / Next -->
+            <div class="carousel-controls" style="margin-top: 10px;">
+              <button id="prev-btn" class="carousel-nav prev-button">
+                <span class="icon is-large"><i class="fas fa-chevron-left"></i></span>
+              </button>
+              <button id="next-btn" class="carousel-nav next-button">
+                <span class="icon is-large"><i class="fas fa-chevron-right"></i></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- In-distribution Performance image + caption -->
+          <div class="has-text-centered" style="margin-top: 2rem;">
+            <img src="./static/figures/in_dist.png"
+                 alt="In-distribution performance figure"
+                 style="width: 80%; height: auto;" />
+            <div style="font-size:110%; margin-top: 0.6rem;">
+              <b>EgoBridge outperforms Robot-BC and other human-augmented baselines by 44% in three real-world tasks.</b>
+            </div>
+          </div>
+
+          <br><br>
+
+          <!-- ===================== Scene Generalization ===================== -->
+          <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Scene Generalization</span></h3>
+          <br>
+          <div class="has-text-centered">
+            <video poster="" autoplay muted controls loop style="width: 80%; height: auto;">
+              <source src="./static/videos/tweet6.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="has-text-centered" style="margin-top: 1rem;">
+            <img src="./static/figures/scenegen.png"
+                 alt="Scene generalization results figure"
+                 style="width: 80%; height: auto;" />
+            <div style="font-size:110%; margin-top: 0.6rem;">
+              <b>EgoBridge generalizes to an entirely new scene and object combination unseen in robot data where human-augmented baselines fail entirely in the Scoop Coffee task.</b>
+            </div>
+          </div>
+
+          <br><br>
+
+          <!-- ===================== Behavior Generalization ===================== -->
+          <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Behavior Generalization</span></h3>
+          <br>
+          <div class="has-text-centered">
+            <video poster="" autoplay muted controls loop style="width: 80%; height: auto;">
+              <source src="./static/videos/tweet7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div style="font-size:110%; text-align:center; margin-top: 0.6rem;">
+            <b>EgoBridge allows the robot to generalize to a completely out-of-distribution set of trajectories in the Drawer task where the gripper moving to the top right corner is never observed.</b>
+          </div>
+
+          <br><br>
+
+          <!-- ===================== Simulation PushT ===================== -->
+          <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Simulation PushT</span></h3>
+          <br>
+          <div class="has-text-centered">
+            <img src="./static/figures/pusht_full.png"
+                 alt="PushT figure"
+                 style="width: 400%; height: auto;" />
+          </div>
+          <div style="font-size:110%; text-align:center; margin-top: 0.6rem;">
+            <b>We simulate a human-robot gap in a reproducible planar pushing task. EgoBridge outperforms standard DA baselines, showing cross-embodiment transfer across new backgrounds and new motions.</b>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Scene Generalization</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
-        <source src="./static/videos/tweet6_placeholder.mp4" type="video/mp4">
-      </video>
-      <p class="is-size-6 has-text-grey">Placeholder for Tweet 6 video</p>
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Latent Visualization</span></h2>
+          <br>
+          <div class="has-text-centered">
+            <video poster="" autoplay muted controls loop style="width: 80%; height: auto;">
+              <source src="./static/videos/tweet8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <br>
+          <span style="font-size: 110%; text-align: center; display: block;">
+            <b>Visualization of aligned latents.</b> We visualize the t-SNE of the latent embeddings produced by the encoder and 
+            find that <b>EgoBridge</b> not only aligns human–robot distributions but also structures them into shared semantic clusters.
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Scene Generalization Results</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <img src="./static/figures/scene_gen_results_placeholder.png" alt="Scene generalization results figure" style="width: 80%; height: auto;"/>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Drawer Generalization</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
-        <source src="./static/videos/tweet7_placeholder.mp4" type="video/mp4">
-      </video>
-      <p class="is-size-6 has-text-grey">Placeholder for Tweet 7 video</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Motion Generalization Results</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <img src="./static/figures/motion_gen_results_placeholder.png" alt="Motion generalization results figure" style="width: 80%; height: auto;"/>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">PushT</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <img src="./static/figures/pusht_placeholder.png" alt="PushT figure" style="width: 60%; height: auto;"/>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered"><span class="dvima">Latent Visualization</span></h2>
-    <div class="has-text-centered" style="margin-top: 1rem;">
-      <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
-        <source src="./static/videos/tweet8_placeholder.mp4" type="video/mp4">
-      </video>
-      <p class="is-size-6 has-text-grey">Placeholder for Tweet 8 video</p>
-    </div>
-  </div>
-</section>
 
 <footer class="footer">
   <div class="container">
@@ -292,6 +371,176 @@
     </div>
   </div>
 </footer>
+
+</body>
+</html>
+
+<!-- Custom Script for Button-based Carousel -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.item');
+    const taskDescriptions = [
+      "<b>(a) Laundry:</b> the robot folds a polo shirt placed randomly on the table.",
+      "<b>(b) Scoop Coffee:</b> the robot picks up a scoop filled with coffee beans and empties it into the target container placed randomly.",
+      "<b>(c) Drawers:</b> the robot picks up a toy and places it into the open drawer and closes it."
+    ];
+
+    let currentIndex = 0;
+    const taskDescriptionEl = document.getElementById('taskDescription');
+    
+    // Function to show the active video and hide others
+    function showVideo(index) {
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.style.display = 'block';  // Show active item
+        } else {
+          item.style.display = 'none';   // Hide inactive items
+        }
+      });
+      // Update task description
+      taskDescriptionEl.innerHTML = taskDescriptions[index];
+    }
+
+    // Button event listeners
+    document.getElementById('prevBtn').addEventListener('click', function () {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
+      showVideo(currentIndex);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', function () {
+      currentIndex = (currentIndex + 1) % items.length;  // Move forward
+      showVideo(currentIndex);
+    });
+
+    // Initialize the first video
+    showVideo(currentIndex);
+  });
+</script>
+
+<!-- Basic Styling to ensure all videos are controlled and responsive -->
+<style>
+  .carousel .item {
+    display: none;  /* Hide all videos initially */
+  }
+
+  .carousel .item video {
+    width: 70%;  /* Make the videos smaller */
+    max-width: 400px;  /* Set a maximum width */
+    height: auto;  /* Maintain aspect ratio */
+    margin: 0 auto;  /* Center the video */
+  }
+
+  .carousel .item:first-child {
+    display: block;  /* Show the first video by default */
+  }
+
+  .carousel-nav {
+    background-color: #000;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  .carousel-nav:hover {
+    background-color: #555;
+  }
+
+  .icon.is-large {
+    font-size: 2em;
+  }
+</style>
+<script>
+  // JavaScript for video carousel
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.results-carousel .item');
+    const descriptionBox = document.getElementById('video-description');
+    let currentIndex = 0;
+
+    // Show the current item and update the description
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.toggle('active', index === currentIndex);
+      });
+      const currentItem = items[currentIndex];
+      descriptionBox.innerHTML = `<b>(${String.fromCharCode(97 + currentIndex)})</b> ` + currentItem.dataset.description;
+    }
+
+    // Set up the next button
+    document.getElementById('next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    });
+
+    // Set up the previous button
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateCarousel();
+    });
+
+    // Initialize the carousel
+    updateCarousel();
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.item');
+    const taskDescriptions = [
+      "<b>(a) Laundry:</b> the robot folds a polo shirt placed randomly on the table.",
+      "<b>(b) Scoop Coffee:</b> the robot picks up a scoop filled with coffee beans and empties it into the target container placed randomly.",
+      "<b>(c) Drawers:</b> the robot picks up a toy and places it into the open drawer and closes it."
+    ];
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    const taskDescriptionEl = document.getElementById('video-description');
+
+    // Function to show the active video and update dots
+    function showVideo(index) {
+        items.forEach((item, i) => {
+            if (i === index) {
+                item.style.display = 'block';  // Show active item
+            } else {
+                item.style.display = 'none';   // Hide inactive items
+            }
+        });
+        // Update task description
+        taskDescriptionEl.innerHTML = taskDescriptions[index];
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Button event listeners
+    document.getElementById('prev-btn').addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
+        showVideo(currentIndex);
+    });
+
+    document.getElementById('next-btn').addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % items.length;  // Move forward
+        showVideo(currentIndex);
+    });
+
+    // Dot event listeners
+    dots.forEach(dot => {
+        dot.addEventListener('click', function () {
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            showVideo(currentIndex);
+        });
+    });
+
+    // Initialize the first video
+    showVideo(currentIndex);
+});
+
+</script>
 
 </body>
 </html>
